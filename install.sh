@@ -59,8 +59,9 @@ brew install gnu-sed
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 mkdir -p ~/.oh-my-zsh/custom/themes
-curl https://raw.githubusercontent.com/cpollet/initialsetup/master/cpollet.zsh-theme > ~/.oh-my-zsh/custom
+curl https://raw.githubusercontent.com/cpollet/initialsetup/master/cpollet.zsh-theme > ~/.oh-my-zsh/custom/cpollet.zsh-theme
 gsed -i 's/robbyrussell/cpollet/g' ~/.zshrc
 
-
+echo "Initial setup done. Hit enter to reboot"
+sudo reboot
 
