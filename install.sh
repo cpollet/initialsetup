@@ -40,6 +40,9 @@ brew cask install sublime-text
 brew cask install intellij-idea
 brew cask install datagrip
 
+brew install Caskroom/cask/osxfuse
+brew install homebrew/fuse/sshfs
+
 sudo mkdir -p /usr/local/bin
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 
