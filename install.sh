@@ -26,6 +26,7 @@ read
 brew install maven
 brew install htop
 brew install gnu-sed
+brew install node
 
 brew tap caskroom/cask
 brew cask install kdiff3
