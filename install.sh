@@ -19,6 +19,12 @@ open "http://www.oracle.com/technetwork/java/javase/downloads/index.html"
 echo "Download Docker"
 open "https://www.docker.com/"
 
+echo "Install XQuartz"
+open "https://www.xquartz.org/"
+
+echo "Install Max"
+open "http://sbooth.org/Max/#download"
+
 echo "hit enter when done"
 read
 
@@ -27,6 +33,8 @@ brew install maven
 brew install htop
 brew install gnu-sed
 brew install node
+brew install socat
+brew install easy-tag
 
 brew tap caskroom/cask
 brew cask install kdiff3
