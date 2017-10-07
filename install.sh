@@ -61,4 +61,5 @@ curl https://raw.githubusercontent.com/cpollet/initialsetup/master/cpollet.zsh-t
 gsed -i 's/robbyrussell/cpollet/g' ~/.zshrc
 
 echo "Initial setup done. Hit enter to reboot"
+read
 sudo reboot
