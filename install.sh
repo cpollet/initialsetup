@@ -25,6 +25,8 @@ open "https://www.xquartz.org/"
 echo "Install Max"
 open "http://sbooth.org/Max/#download"
 
+echo "Install Postman
+
 echo "hit enter when done"
 read
 
@@ -48,6 +50,7 @@ brew cask install telegram-desktop
 brew cask install sublime-text
 brew cask install intellij-idea
 brew cask install datagrip
+brew cask install postman
 
 brew install Caskroom/cask/osxfuse
 brew install homebrew/fuse/sshfs
