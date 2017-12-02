@@ -32,6 +32,7 @@ read
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install maven
+brew install gradle
 brew install htop
 brew install gnu-sed
 brew install node
