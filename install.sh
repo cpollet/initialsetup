@@ -55,6 +55,7 @@ brew cask install sublime-text
 brew cask install intellij-idea
 brew cask install datagrip
 brew cask install postman
+brew cask install graphiql
 
 brew install Caskroom/cask/osxfuse
 brew install homebrew/fuse/sshfs
