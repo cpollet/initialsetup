@@ -41,6 +41,7 @@ brew install gnu-sed
 brew install node
 brew install socat
 brew install easy-tag
+brew install watch
 
 brew tap caskroom/cask
 brew cask install kdiff3
