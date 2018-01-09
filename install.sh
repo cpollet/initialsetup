@@ -19,6 +19,9 @@ xcode-select --install
 echo "Install Java"
 open "http://www.oracle.com/technetwork/java/javase/downloads/index.html"
 
+echo "Install Go"
+open "https://golang.org/doc/install"
+
 echo "Download Docker"
 open "https://www.docker.com/"
 
