@@ -45,6 +45,7 @@ brew install node
 brew install socat
 brew install easy-tag
 brew install watch
+brew install gdb
 
 brew tap caskroom/cask
 brew cask install kdiff3
@@ -63,6 +64,8 @@ brew cask install graphiql
 
 brew install Caskroom/cask/osxfuse
 brew install sshfs
+
+python3 -m pip install gdbgui --upgrade
 
 sudo mkdir -p /usr/local/bin
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
