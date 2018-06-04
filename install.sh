@@ -74,6 +74,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 mkdir -p ~/.oh-my-zsh/custom/themes
 curl https://raw.githubusercontent.com/cpollet/initialsetup/master/cpollet.zsh-theme > ~/.oh-my-zsh/custom/cpollet.zsh-theme
 gsed -i 's/robbyrussell/cpollet/g' ~/.zshrc
+echo "export MAVEN_OPTS=-Djava.awt.headless=true" >> ~/.zshrc
 
 echo "Initial setup done. Hit enter to reboot"
 read
