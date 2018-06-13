@@ -46,6 +46,7 @@ brew install socat
 brew install easy-tag
 brew install watch
 brew install gdb
+brew install gpg
 
 brew tap caskroom/cask
 brew cask install kdiff3
