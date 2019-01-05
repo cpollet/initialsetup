@@ -31,14 +31,11 @@ open "https://www.xquartz.org/"
 echo "Install Max"
 open "http://sbooth.org/Max/#download"
 
-echo "Install Postman
-
 echo "Install Toolbox App"
 open "https://www.jetbrains.com/toolbox/app/"
 
 echo "Install Digikam"
 echo "Install pCould Drive"
-echo "Install Google Drive"
 
 echo "hit enter when done"
 read
@@ -65,8 +62,6 @@ brew cask install utorrent
 brew cask install macpass
 brew cask install telegram-desktop
 brew cask install sublime-text
-brew cask install intellij-idea
-brew cask install datagrip
 brew cask install postman
 brew cask install graphiql
 
