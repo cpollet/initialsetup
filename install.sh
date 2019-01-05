@@ -33,6 +33,13 @@ open "http://sbooth.org/Max/#download"
 
 echo "Install Postman
 
+echo "Install Toolbox App"
+open "https://www.jetbrains.com/toolbox/app/"
+
+echo "Install Digikam"
+echo "Install pCould Drive"
+echo "Install Google Drive"
+
 echo "hit enter when done"
 read
 
