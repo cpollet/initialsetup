@@ -18,6 +18,7 @@ sudo apt-get install \
   docker \
   htop \
   npm \
-  docker-ce
+  docker-ce \
+  vim
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/cpollet/dotfiles/master/install.sh)"
