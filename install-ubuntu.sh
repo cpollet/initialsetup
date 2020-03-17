@@ -21,4 +21,7 @@ sudo apt-get install \
   docker-ce \
   vim
 
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/cpollet/dotfiles/master/install.sh)"
