@@ -43,6 +43,9 @@ open "https://mac.eltima.com/download-manager.html"
 echo "Install Firefox"
 open "https://www.mozilla.org/fr/firefox/mac/"
 
+echo "Install Thunderbird"
+open "https://www.thunderbird.net/fr/"
+
 echo "Install Spotify"
 open "https://www.spotify.com/ch-fr/download/mac/"
 
