@@ -37,6 +37,15 @@ open "https://www.jetbrains.com/toolbox/app/"
 echo "Install Digikam"
 echo "Install pCould Drive"
 
+echo "Install Folx"
+open "https://mac.eltima.com/download-manager.html"
+
+echo "Install Firefox"
+open "https://www.mozilla.org/fr/firefox/mac/"
+
+echo "Install Spotify"
+open "https://www.spotify.com/ch-fr/download/mac/"
+
 echo "hit enter when done"
 read
 
@@ -58,7 +67,6 @@ brew cask install vlc
 brew cask install google-chrome
 brew cask install google-drive
 brew cask install sourcetree
-brew cask install utorrent
 brew cask install macpass
 brew cask install telegram-desktop
 brew cask install sublime-text
