@@ -21,7 +21,9 @@ sudo apt-get install \
   docker-ce \
   vim \
   terminator \
-  keepass2
+  keepass2 \
+  java-common \
+  maven
 
 sudo groupadd docker
 sudo usermod -aG docker ${USER}
@@ -67,8 +69,46 @@ else
 	pcloud
 fi
 
-# todo
-# java, maven
+# https://www.opsdash.com/blog/oracle-jdk-debian-ubuntu.html
+# https://gist.github.com/olagache/a2eff8b2bbc95e03280b
+sudo mkdir -p /usr/lib/jvm/
+echo "Downlaod Java 8 from https://www.oracle.com/java/technologies/javase-downloads.html"
+echo "Untar in in /usr/lib/jvm/"
+echo "Press enter to continue"
+echo "What's the JDK name?"
+read
+JDK=$REPLY
+if [ ! -f /usr/lib/jvm/$JDK/bin/javac ]; then
+	echo "/usr/lib/jvm/$JDK/bin/javac does not exist!"
+else
+	echo "name=$JDK" > /tmp/$JDK.jinfo
+	echo "alias=oracle-jdk1.8" >> /tmp/$JDK.jinfo
+	echo "priority=180" >> /tmp/$JDK.jinfo
+	echo "section=main" >> /tmp/$JDK.jinfo
+	for file in $(find /usr/lib/jvm/$JDK/jre/bin/ -type f -executable); do
+		executable=$(echo $file | rev | cut -d'/' -f1 | rev)
+		echo "jre $executable /usr/lib/jvm/$JDK/jre/bin/$executable" >> /tmp/$JDK.jinfo
+		sudo update-alternatives --install /usr/bin/$executable $executable /usr/lib/jvm/$JDK/jre/bin/$executable 180
+	done
+	for file in $(find /usr/lib/jvm/$JDK/bin/ -type f -executable); do
+		executable=$(echo $file | rev | cut -d'/' -f1 | rev)
+		inJre=$(grep $executable /tmp/$JDK.jinfo | wc -l)
+		if [ $inJre -eq 0 ]; then
+			echo "jdk $executable /usr/lib/jvm/$JDK/bin/$executable" >> /tmp/$JDK.jinfo
+			sudo update-alternatives --install /usr/bin/$executable $executable /usr/lib/jvm/$JDK/bin/$executable 180
+		fi
+	done
+	sudo mv /tmp/$JDK.jinfo /usr/lib/jvm/.$JDK.jinfo
+	sudo update-java-alternatives -s $JDK
+	# sudo sh -c 'echo "export JAVA_HOME=\"/opt/java\"" >> /etc/profile.d/environment.sh'
+fi
+echo "Installed versions of Java"
+update-java-alternatives -l
+
+sudo update-alternatives --config editor
+sudo update-alternatives --config x-www-browser
+sudo update-alternatives --config x-terminal-emulator
+sudo update-alternatives --config gnome-www-browser
 
 echo "Finised. Press enter to reboot"
 read
