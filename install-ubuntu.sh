@@ -23,7 +23,10 @@ sudo apt-get install \
   terminator \
   keepass2 \
   java-common \
-  maven
+  maven \
+  vlc \
+  libreoffice \
+  remmina
 
 sudo groupadd docker
 sudo usermod -aG docker ${USER}
