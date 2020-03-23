@@ -79,8 +79,8 @@ echo "Downlaod Java 8 from https://www.oracle.com/java/technologies/javase-downl
 echo "Untar in in /usr/lib/jvm/"
 echo "Press enter to continue"
 echo "What's the JDK name?"
-read
-JDK=$REPLY
+read JDK
+
 if [ ! -f /usr/lib/jvm/$JDK/bin/javac ]; then
 	echo "/usr/lib/jvm/$JDK/bin/javac does not exist!"
 else
