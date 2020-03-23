@@ -11,4 +11,6 @@ $ /bin/bash -ci "$(curl -fsSL https://raw.githubusercontent.com/cpollet/initials
 ```
 
 # Raspberry
+```
 $ /bin/bash -ci "$(curl -fsSL https://raw.githubusercontent.com/cpollet/initialsetup/master/install-raspberry.sh)"
+```
