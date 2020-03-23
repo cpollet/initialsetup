@@ -26,7 +26,8 @@ sudo apt-get install \
   maven \
   vlc \
   libreoffice \
-  remmina
+  remmina \
+  transmission-remote-gtk
 
 sudo groupadd docker
 sudo usermod -aG docker ${USER}
