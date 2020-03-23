@@ -75,6 +75,7 @@ brew cask install telegram-desktop
 brew cask install sublime-text
 brew cask install postman
 brew cask install graphiql
+brew cask install transmission-remote-gui
 
 brew install Caskroom/cask/osxfuse
 brew install sshfs
