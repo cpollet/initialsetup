@@ -49,7 +49,7 @@ cd "$D"
 
 mkdir -p /opt
 echo "Download Jetbrains toolbox from https://www.jetbrains.com/toolbox-app/download/download-thanks.html"
-echo "Untar in in /opt and create a symlink /opt/jetbrains-toolbox to it"
+echo "Untar it in /opt and create a symlink /opt/jetbrains-toolbox to it"
 echo "Press enter to continue"
 read
 if [ ! -f "/opt/jetbrains-toolbox/jetbrains-toolbox" ]; then
