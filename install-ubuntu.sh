@@ -9,6 +9,7 @@ echo 	"deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -
 sudo apt-get update
 
 sudo apt-get install \
+  chrome-gnome-shell \
   openssh-server \
   kdiff3 \
   zsh \
@@ -113,6 +114,8 @@ sudo update-alternatives --config editor
 sudo update-alternatives --config x-www-browser
 sudo update-alternatives --config x-terminal-emulator
 sudo update-alternatives --config gnome-www-browser
+
+echo "You may want to install https://extensions.gnome.org/extension/545/hide-top-bar/"
 
 echo "Finised. Press enter to reboot"
 read
