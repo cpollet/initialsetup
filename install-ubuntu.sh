@@ -1,4 +1,5 @@
-mkdir ~/{Admin,Development}
+mkdir ~/Admin
+mkdir ~/Development
 
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
@@ -116,6 +117,15 @@ echo
 echo "You may want to install the following:"
 echo " * https://extensions.gnome.org/extension/545/hide-top-bar/"
 echo " * https://extensions.gnome.org/extension/15/alternatetab/"
+
+ssh-keygen
+
+echo "Copy the following key to https://github.com/settings/keys"
+echo
+cat .ssh/id_rsa.pub
+echo
+echo "Press enter when done"
+read
 
 echo
 echo "Finised. Press enter to reboot"
