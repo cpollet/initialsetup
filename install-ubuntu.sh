@@ -55,7 +55,6 @@ read
 if [ ! -f "/opt/jetbrains-toolbox/jetbrains-toolbox" ]; then
 	echo "/opt/jetbrains-toolbox/jetbrains-toolbox does not exist!"
 else
-	sudo chomd a+x /opt/pcloud	
 	sudo ln -s /opt/jetbrains-toolbox/jetbrains-toolbox /usr/local/bin/jetbrains-toolbox
 	jetbrains-toolbox	
 fi
@@ -67,7 +66,7 @@ read
 if [ ! -f "/opt/pcloud" ]; then
 	echo "/opt/pcloud does not exist!"
 else
-	sudo chomd a+x /opt/pcloud
+	sudo chmod a+x /opt/pcloud
 	sudo ln -s /opt/pcloud /usr/local/bin/pcloud
 	pcloud
 fi
@@ -113,7 +112,9 @@ sudo update-alternatives --config x-www-browser
 sudo update-alternatives --config x-terminal-emulator
 sudo update-alternatives --config gnome-www-browser
 
-echo "You may want to install https://extensions.gnome.org/extension/545/hide-top-bar/"
+echo "You may want to install the following:"
+echo " * https://extensions.gnome.org/extension/545/hide-top-bar/"
+echo " * https://extensions.gnome.org/extension/15/alternatetab/"
 
 echo "Finised. Press enter to reboot"
 read
