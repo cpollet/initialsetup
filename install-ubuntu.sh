@@ -36,8 +36,6 @@ sudo usermod -aG docker ${USER}
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/cpollet/dotfiles/master/install.sh)"
-
 mkdir -p ~/.fonts
 echo "Download SourceCodeVariable-Roman.otf from https://github.com/adobe-fonts/source-code-pro/releases/latest"
 echo "Put it in ~/.fonts"
