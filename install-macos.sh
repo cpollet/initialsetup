@@ -85,8 +85,6 @@ python3 -m pip install gdbgui --upgrade
 sudo mkdir -p /usr/local/bin
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/cpollet/dotfiles/master/install.sh)"
-
 echo "Initial setup done. Hit enter to reboot"
 read
 sudo reboot
