@@ -8,6 +8,8 @@ $ /bin/bash -ci "$(curl -fsSL https://raw.githubusercontent.com/cpollet/initials
 # Ubuntu
 ```
 $ /bin/bash -ci "$(curl -fsSL https://raw.githubusercontent.com/cpollet/initialsetup/master/install-ubuntu.sh)"
+$ /bin/bash -ci "$(curl -fsSL https://raw.githubusercontent.com/cpollet/dotfiles/master/install.sh)"
+
 ```
 
 # Raspberry
