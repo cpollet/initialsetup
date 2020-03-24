@@ -112,10 +112,12 @@ sudo update-alternatives --config x-www-browser
 sudo update-alternatives --config x-terminal-emulator
 sudo update-alternatives --config gnome-www-browser
 
+echo
 echo "You may want to install the following:"
 echo " * https://extensions.gnome.org/extension/545/hide-top-bar/"
 echo " * https://extensions.gnome.org/extension/15/alternatetab/"
 
+echo
 echo "Finised. Press enter to reboot"
 read
 sudo reboot
