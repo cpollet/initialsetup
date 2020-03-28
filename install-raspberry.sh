@@ -25,7 +25,7 @@ sudo touch /etc/transmission-daemon/smbcredentials
 sudo chmod 600 /etc/transmission-daemon/smbcredentials
 sudo sh -c "echo \"username=$smb_username\npassword=$smb_password\" > /etc/transmission-daemon/smbcredentials"
 
-sudo sh -c "echo \"\n\n//nas/Torrents /var/lib/transmission-daemon/downloads cifs cred=/etc/transmission-daemon/smbcredentials,iocharset=utf8,sec=ntlm,vers=1.0,uid=$(id -u debian-transmission) 0 0\" >> /etc/fstab"
+sudo sh -c "echo \"\n\n$smb_volume /var/lib/transmission-daemon/downloads cifs cred=/etc/transmission-daemon/smbcredentials,iocharset=utf8,sec=ntlm,vers=1.0,uid=$(id -u debian-transmission) 0 0\" >> /etc/fstab"
 sudo mount -a
 
 sudo systemctl start transmission-daemon.service
