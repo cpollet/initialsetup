@@ -118,8 +118,17 @@ echo "You may want to install the following:"
 echo " * https://extensions.gnome.org/extension/545/hide-top-bar/"
 echo " * https://extensions.gnome.org/extension/15/alternatetab/"
 
+echo
 ssh-keygen
 
+echo
+read -p "Enter user@host where to copy you SSH key: (empty to stop) " host
+until [[ $host == '' ]]; do
+  ssh -t $host "echo '$(cat ~/.ssh/id_rsa.pub)' >> .ssh/authorized_keys"
+  read -p "Enter user@host where to copy you SSH key: (empty to stop) " host
+done
+
+echo
 echo "Copy the following key to https://github.com/settings/keys"
 echo
 cat .ssh/id_rsa.pub
