@@ -5,7 +5,11 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
 
 wget -q -O - https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-echo 	"deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker-ce.list
+echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker-ce.list
+
+# https://doc.ubuntu-fr.org/virtualbox
+wget -q -O- http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc | sudo apt-key add -
+echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
 
 sudo apt-get update
 
@@ -29,13 +33,16 @@ sudo apt-get install \
   vlc \
   libreoffice \
   remmina \
-  transmission-remote-gtk
+  transmission-remote-gtk \
+  virtualbox-6.1
 
-sudo groupadd docker
-sudo usermod -aG docker ${USER}
+snap install spotify
 
 sudo groupadd docker
 sudo usermod -aG docker $USER
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod a+x /usr/local/bin/docker-compose
 
 mkdir -p ~/.fonts
 echo "Download SourceCodeVariable-Roman.otf from https://github.com/adobe-fonts/source-code-pro/releases/latest"
@@ -75,7 +82,7 @@ fi
 # https://www.opsdash.com/blog/oracle-jdk-debian-ubuntu.html
 # https://gist.github.com/olagache/a2eff8b2bbc95e03280b
 sudo mkdir -p /usr/lib/jvm/
-echo "Downlaod Java 8 from https://www.oracle.com/java/technologies/javase-downloads.html"
+echo "Download Java 8 from https://www.oracle.com/java/technologies/javase-downloads.html"
 echo "Untar in in /usr/lib/jvm/"
 echo "Press enter to continue"
 echo "What's the JDK name?"

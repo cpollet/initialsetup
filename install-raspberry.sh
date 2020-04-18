@@ -4,8 +4,13 @@ sudo apt update
 sudo apt upgrade
 
 sudo apt install \
-	transmission-daemon \
-	cifs-utils
+  transmission-daemon \
+  cifs-utils
+
+sudo snap install docker
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
 
 echo
 sudo update-alternatives --config editor
@@ -52,3 +57,8 @@ done
 wget https://git.io/vpn -O ~/openvpn-install.sh
 chmod a+x ~/openvpn-install.sh
 sudo ~/openvpn-install.sh
+
+echo
+echo "Finised. Press enter to reboot"
+read
+sudo reboot
