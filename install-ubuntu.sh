@@ -36,6 +36,8 @@ sudo apt-get install \
   transmission-remote-gtk \
   virtualbox-6.1
 
+sudo npm install -g npm
+
 snap install spotify
 
 sudo groupadd docker
