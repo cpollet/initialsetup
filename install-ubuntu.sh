@@ -11,6 +11,10 @@ echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -c
 wget -q -O- http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc | sudo apt-key add -
 echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
 
+# https://doc.ubuntu-fr.org/nodejs / https://github.com/nodesource/distributions
+wget -qO- https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt install -y nodejs
+
 sudo apt-get update
 
 sudo apt-get install \
@@ -23,7 +27,7 @@ sudo apt-get install \
   google-chrome-stable \
   docker \
   htop \
-  npm \
+  nodejs \
   docker-ce \
   vim \
   terminator \
