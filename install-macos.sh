@@ -106,8 +106,10 @@ brew cask install postman
 brew cask install graphiql
 brew cask install transmission-remote-gui
 
-brew install Caskroom/cask/osxfuse
-brew install sshfs
+echo "sshfs: https://github.com/telepresenceio/telepresence/issues/1654"
+# brew install Caskroom/cask/osxfuse
+# brew install fuse
+# brew install sshfs
 
 python3 -m pip install gdbgui --upgrade
 
