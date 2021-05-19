@@ -16,11 +16,14 @@ read
 "Install xcode-select"
 xcode-select --install
 
-echo "Install Java"
+echo "Install Java (opt)"
 open "http://www.oracle.com/technetwork/java/javase/downloads/index.html"
 
 echo "Install Go"
 open "https://golang.org/doc/install"
+
+echo "Install rust"
+open "https://www.rust-lang.org/tools/install"
 
 echo "Download Docker"
 open "https://www.docker.com/"
@@ -30,6 +33,9 @@ open "https://www.xquartz.org/"
 
 echo "Install Max"
 open "http://sbooth.org/Max/#download"
+
+echo "Install HandBrake"
+open "https://handbrake.fr/"
 
 echo "Install Toolbox App"
 open "https://www.jetbrains.com/toolbox/app/"
@@ -49,10 +55,32 @@ open "https://www.thunderbird.net/fr/"
 echo "Install Spotify"
 open "https://www.spotify.com/ch-fr/download/mac/"
 
+echo "Install 1password"
+open "https://1password.com/"
+
+echo "Install Zwift"
+open "https://www.zwift.com/"
+
+echo "Install zoom"
+echo "https://zoom.us/"
+
+echo "Install Skype"
+
+echo "Install MS Remote Desktop"
+echo "Install Citrix Workspace"
+echo "Install VirtualBox"
+echo "Install LibreOffice"
+
+echo "Install Tunnelblick"
+open "https://tunnelblick.net"
+
+echo "Install kDrive"
+echo "Install pCloud"
+
 echo "hit enter when done"
 read
 
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install maven
 brew install gradle
 brew install htop
@@ -63,6 +91,7 @@ brew install easy-tag
 brew install watch
 brew install gdb
 brew install gpg
+brew install java
 
 brew tap caskroom/cask
 brew cask install kdiff3
@@ -70,8 +99,8 @@ brew cask install vlc
 brew cask install google-chrome
 brew cask install google-drive
 brew cask install sourcetree
-brew cask install macpass
-brew cask install telegram-desktop
+# brew cask install macpass
+# brew cask install telegram-desktop
 brew cask install sublime-text
 brew cask install postman
 brew cask install graphiql
@@ -84,6 +113,8 @@ python3 -m pip install gdbgui --upgrade
 
 sudo mkdir -p /usr/local/bin
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+
+/usr/libexec/java_home -V
 
 echo "Initial setup done. Hit enter to reboot"
 read
