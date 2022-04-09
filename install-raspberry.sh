@@ -58,6 +58,39 @@ wget https://git.io/vpn -O ~/openvpn-install.sh
 chmod a+x ~/openvpn-install.sh
 sudo ~/openvpn-install.sh
 
+#source: https://github.com/pi-hole/docker-pi-hole#running-pi-hole-docker
+#source: https://github.com/pi-hole/docker-pi-hole#installing-on-ubuntu"
+
+sudo sed -r -i.orig 's/#?DNSStubListener=yes/DNSStubListener=no/g' /etc/systemd/resolved.conf
+sudo sh -c 'rm /etc/resolv.conf && ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf'
+sudo systemctl restart systemd-resolved
+
+echo "Installing Pi-hole."
+echo -n "Enter you web UI password: "
+read -s PASSWORD
+echo -n "Enter the IP address: "
+read IPADDR
+echo -n "Enter the host: "
+read HOST
+
+PIHOLE_BASE="${PIHOLE_BASE:-$(pwd)}"
+[[ -d "$PIHOLE_BASE" ]] || mkdir -p "$PIHOLE_BASE" || { echo "Couldn't create storage directory: $PIHOLE_BASE"; exit 1; }
+docker run -d \
+    --name pihole \
+    -p 53:53/tcp \
+    -p 53:53/udp \
+    -p 80:80 \
+    -v "${PIHOLE_BASE}/etc-pihole:/etc/pihole" \
+    -v "${PIHOLE_BASE}/etc-dnsmasq.d:/etc/dnsmasq.d" \
+    --dns=127.0.0.1 --dns=1.1.1.1 \
+    --restart=unless-stopped \
+    -e WEBPASSWORD=$PASSWORD \
+    -e VIRTUAL_HOST=$HOST \
+    -e FTLCONF_REPLY_ADDR4=$IPADDR \
+    pihole/pihole:latest
+
+docker logs -f pihole
+
 echo
 echo "Finised. Press enter to reboot"
 read
