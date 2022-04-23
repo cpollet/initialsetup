@@ -149,6 +149,31 @@ echo
 echo "Press enter when done"
 read
 
+echo "Install CMake"
+wget https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1-linux-x86_64.sh
+chmod a+x cmake-3.22.1-linux-x86_64.sh
+sudo ./cmake-3.22.1-linux-x86_64.sh
+rm cmake-3.22.1-linux-x86_64.sh
+
+echo "Install lua"
+curl -R -O http://www.lua.org/ftp/lua-5.4.3.tar.gz
+tar zxf lua-5.4.3.tar.gz
+cd lua-5.4.3
+make all test
+sudo mv src/lua /usr/local/bin/lua
+sudo mv src/luac /usr/local/bin/luac
+cd ..
+rm -rf lua-5.4.3
+rm lua-5.4.3.tar.gz
+
+echo "Install rust"
+read
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+echo "Install haskell"
+sudo apt-get install build-essential curl libffi-dev libffi6 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+
 echo
 echo "Finised. Press enter to reboot"
 read
