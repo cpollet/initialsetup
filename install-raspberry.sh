@@ -5,7 +5,9 @@ sudo apt upgrade
 
 sudo apt install \
   transmission-daemon \
-  cifs-utils
+  cifs-utils \
+  tmux \
+  wakeonlan
 
 sudo snap install docker
 
