@@ -43,7 +43,8 @@ sudo apt-get install \
   libreoffice \
   remmina \
   transmission-remote-gtk \
-  virtualbox-6.1
+  virtualbox-6.1 \
+  tmux
 
 sudo npm install -g npm
 
